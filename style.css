@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+:root {
+    --cyan: hsl(180, 66%, 49%);
+    --darkViolet: hsl(257, 27%, 26%);
+    --red: hsl(0, 87%, 67%);
+    --gray: hsl(0, 0%, 93%);
+    --grayishViolet: hsl(257, 7%, 63%);
+    --veryDarkBlue: hsl(255, 11%, 22%);
+    --veryDarkViolet: hsl(260, 8%, 14%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 10%;
+    padding-left: 10%;
+  }
+  
+.topnav a {
+    float: left;
+    display: block;
+    color: hsl(257, 7%, 63%);
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.topnav-right .btn {
+    cursor: pointer;
+    padding: 8px 22px;
+    border: none;
+    background-color: hsl(180, 66%, 49%);
+    color: #fff;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-top: 7px;
+}
+  
+.topnav a:hover {
+    color: black;
+}
+
+.topnav a.active {
+    padding-top: 14px;
+    padding-left: 0;
+}
+  
+.topnav .icon {
+    display: none;
+}
+
+.topnav-right {
+    float: right;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 8px 22px;
+    border: none;
+    background-color: var(--cyan);
+    color: #fff;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: rgb(42, 207, 207, 0.8);
+}
+
+main {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10%;
+    margin-top: 100px;
+}
+
+.main-heading {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+main h1 {
+    font-size: 64px;
+    color: var(--veryDarkBlue);
+    font-weight: 700;
+    width: 100%;
+
+}
+
+main p {
+    padding-bottom: 15px;
+    width: 100%;
+    color: var(--grayishViolet);
+}
+
+main .btn {
+    width: 170px;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.main-img {
+    width: 500px;
+}
+
+.sec-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: var(--gray);
+    margin-top: 120px;
+}
+
+section .input {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: url(images/bg-shorten-desktop.svg);
+    background-color: var(--veryDarkBlue);
+    height: 120px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-top: -60px;
+}
+
+.input input {
+    width: 70%;
+    padding-left: 20px;
+    height: 60px;
+    font-size: 18px;
+    color: var(--grayishViolet);
+    border-radius: 5px;
+    border: 3px solid #fff;
+}
+
+.input small {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    color: var(--red);
+}
+
+.input input::placeholder{
+    color: var(--grayishViolet);
+    font-size: 18px;
+}
+
+.input input.wrong::placeholder{
+    color: var(--red);
+}
+
+.input input.wrong {
+    border: 3px solid var(--red);
+}
+
+.input button {
+    width: 30%;
+    height: 60px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: var(--cyan);
+    cursor: pointer;
+    border: none;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.input button, .input input:focus {
+    outline: none;
+}
+
+.input button:hover {
+    background-color: rgb(42, 207, 207, 0.8);
+}
+
+.short-section {
+    width: 100%;
+    position: relative;
+}
+
+.shortLink {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 0 20px;
+    font-weight: 300;
+    margin: 15px 0;
+    padding: 10px 20px;
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    left: -10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.delete-btn:focus {
+    outline: none;
+}
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    position: absolute;
+    left: -10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.shortLink:hover .delete-btn {
+    opacity: 1;
+}
+
+.shortLink .copy {
+    display: flex;
+}
+
+.shortLink .copy button {
+    cursor: pointer;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: var(--cyan);
+    color: #fff;
+}
+
+.shortLink .copy button:focus {
+    outline: none;
+}
+
+.shortLink .copy input {
+    color: var(--cyan);
+    font-weight: 700;
+    border: none;
+    font-size: 18px;
+}
+
+.shortLink .copy input:focus {
+    outline: none;
+}
+
+section .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+section .heading h2 {
+    padding-top: 60px;
+    font-size: 32px;
+    padding-bottom: 5px;
+    color: var(--veryDarkViolet);
+}
+
+section .heading p {
+    color: var(--grayishViolet);
+}
+
+.card-group {
+    position: relative;
+    margin-bottom: 100px;
+    width: 100%;
+    display: flex;
+}
+
+.card-group::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: var(--cyan);
+}
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 270px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 80px;
+    margin-right: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.card-group .card:last-child {
+    margin-right: 0px;
+    margin-top: 180px;
+}
+
+.card-group .card:nth-last-child(2) {
+    margin-top: 130px;
+}
+
+.card img {
+    position: absolute;
+    top: -45px;
+    left: 40px;
+    background-color: var(--veryDarkBlue);
+    padding: 24px;
+    border-radius: 50%;
+}
+
+.card h3 {
+    padding-top: 70px;
+    font-size: 22px;
+}
+
+.card p{
+    padding-top: 10px;
+    color: var(--grayishViolet);
+    font-size: 14px;
+}
+
+.sec-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(images/bg-boost-desktop.svg) center;
+    background-color: var(--veryDarkBlue);
+    height: 150px;
+}
+
+.sec-two h2 {
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+.sec-two .btn {
+    font-weight: 700;
+    padding: 10px 24px;
+}
+
+footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: var(--veryDarkViolet);
+    padding: 50px;
+}
+
+footer .footer {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .footer a {
+    color: var(--grayishViolet);
+    font-size: 14px;
+    text-decoration: none;
+    padding-bottom: 5px;
+}
+
+footer .footer a:hover {
+    color: var(--cyan);
+}
+
+footer .footer a:first-child {
+    color: #fff;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+footer .icons a {
+    color: #fff;
+    padding-right: 5px;
+}
+
+footer .icons a:hover {
+    color: var(--cyan);
+}
+
+@media (max-width: 1024px) {
+    .card h3 {
+        font-size: 20px;
+        padding-top: 40px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    main {
+        flex-direction: column-reverse;
+        padding: 20px;
+    }
+
+    .main-heading {
+        text-align: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    main .btn {
+        margin: 0 auto;
+    }
+
+    .card-group {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-group::before {
+        top: 100px;
+        left: 50%;
+        right: 0;
+        height: 80%;
+        bottom: 0;
+        width: 10px;
+    }
+
+    .card {
+        margin-right: 0;
+        width: 100%;
+    }
+    .card-group .card:last-child {
+        margin-right: 0px;
+        margin-top: 130px;
+    }
+
+    .card h3 {
+        font-size: 26px;
+        padding-top: 60px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+}
+  
+@media screen and (max-width: 810px) {
+    .shortLink {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .shortLink .copy {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .shortLink .copy input {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .shortLink .copy button {
+        width: 100%;
+    }
+
+    section .heading {
+        width: 100%;
+    }
+
+    .main-img {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .topnav {
+        padding: 20px;
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: white;
+      margin-bottom: 20px;
+      color: var(--grayishViolet);
+    }
+  
+    .topnav.responsive a.active {
+        text-align: left;
+        display: inline;
+        background-color: white;
+    }
+  
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: center;
+      background-color: hsl(257, 27%, 26%);
+      color: white;
+    }
+  
+    .topnav-right {
+        text-align: center;
+        width: 100%;
+        background-color: hsl(257, 27%, 26%);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+  
+    .topnav .topnav-right .btn {
+        margin-left: 14px;
+        margin-right: 14px;
+        margin-bottom: 20px;
+        background-color: hsl(180, 66%, 49%);
+    }
+  
+    .features {
+        margin-top: 20px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+  
+}
+
+@media screen and (max-width: 840px) {
+    .topnav a {display: none;}
+    .topnav .active {
+        display: block;
+    }
+    .topnav a.icon {
+      float: right;
+      display: block;
+    }
+
+    .topnav a.active {
+        padding-left: 20px;
+    }
+  }
+
+@media (max-width: 550px) {
+    main {
+        margin-top: 10px;
+    }
+
+    main h1 {
+        font-size: 44px;
+        line-height: 60px;
+    }
+
+    .input {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    section .input {
+        height: 140px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .input input {
+        width: 100%;
+    }
+
+    .input small {
+        width: 100%;
+    }
+
+    .input button {
+        width: 100%;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 50px 0;
+    }
+
+    footer .footer {
+        align-items: center;
+    }
+
+    footer .icons {
+        padding-top: 40px;
+    }
+
+    footer .footer a:first-child {
+        padding-top: 40px;
+    }
+}
+
+@media (max-width: 370px) {
+    .shortLink h4, .shortLink .copy input {
+        font-size: 14px;
+    }
+}
